@@ -16,7 +16,7 @@ import processing.core.PImage;
  * 
  * In the setup() method:
  * 2. Load a picture of a record using the loadImage() method:
- *    pictureOfRecord = loadImage("images/record.png");
+ * pictureOfRecord = loadImage("images/record.png");
  * 
  * 3. Call the image variable's resize() method to set the image's width and
  *    height to the window's width and height.
@@ -46,6 +46,7 @@ public class SpinningRecord extends PApplet {
     
     Song song = new Song("src/awesomeTrack.mp3");
     PImage pictureOfRecord;
+    int amountToRotate = 1;
     
     @Override
     public void settings() {
@@ -54,12 +55,14 @@ public class SpinningRecord extends PApplet {
 
     @Override
     public void setup() {
-        
+    	pictureOfRecord= loadImage("record.png");
+    	pictureOfRecord.resize(height,width);
     }
 
     @Override
     public void draw() {
-        
+    	rotateImage(PImage image, int amountToRotate); 
+    	image(pictureOfRecord, 0, 0);
     }
 
     static public void main(String[] args) {
