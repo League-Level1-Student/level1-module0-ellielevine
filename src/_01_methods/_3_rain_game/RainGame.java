@@ -60,12 +60,9 @@ public class RainGame extends PApplet {
     public void settings() {
         size(WIDTH, HEIGHT);
     }
-
     @Override
     public void setup() {
-    	fill(255, 000, 000);
-    	stroke(255, 000, 000);
-    	rect(mouseX, 600, bucketWidth, bucketHeight);
+    	
     }
 
     @Override
@@ -81,6 +78,9 @@ y = 50;
 Random random = new Random();
 x = random.nextInt(601);
 }
+fill(255, 000, 000);
+stroke(255, 000, 000);
+rect(mouseX, 550, bucketWidth, bucketHeight);
 if (y>=550) {
 	checkCatch(x);
 }
