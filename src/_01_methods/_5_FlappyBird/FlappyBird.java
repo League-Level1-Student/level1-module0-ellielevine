@@ -2,6 +2,8 @@ package _01_methods._5_FlappyBird;
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import processing.core.PApplet;
 
 public class FlappyBird extends PApplet {
@@ -39,6 +41,7 @@ boolean intersectsPipes() {
     	ellipse(birdX, birdY, 25, 25);
     	birdY += gravity;
     	fill(138, 192, 72);
+    	
     
     	rect(pipeX, upperPipeHeight, pipeWidth, 600);
     	pipeX -=5;
@@ -46,6 +49,12 @@ boolean intersectsPipes() {
     		  pipeX = 800;
     		  upperPipeHeight = ran.nextInt(301) + 100;
     	  }
+    	 fill(50, 200, 50);
+    	 rect(0, 550, 800,50);
+    	 if (birdY>=550) {
+    		 JOptionPane.showMessageDialog(null, "Game Over");
+    		 birdY=100;
+    	 }
     	
     }
     
