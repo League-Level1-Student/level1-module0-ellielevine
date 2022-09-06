@@ -52,12 +52,24 @@ jPanel.add(drumLabel);
 		// Run your program. Do you see your drum image?
 jFrame.pack();
 		// Add this MouseListener to drumLabel
-		
+drumLabel.addMouseListener(this);
 		// *** Write the code in the mouseClicked() method below
 
 		//  Set the layout of the panel to "new GridLayout()"
-
 		//  Add a cymbal image to make a Drum Kit (one has been provided).
+JFrame jFramee = new JFrame();
+jFramee.setVisible(true);;
+jFramee.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
+jFramee.setTitle("Cymbal");
+JPanel jPanell = new JPanel();
+jFramee.add(jPanell);
+String cymbalImage = "cymbal.jpg";
+JLabel jLabell = new JLabel();
+jLabell = createLabelImage(cymbalImage);
+jPanell.add(jLabell);
+jFramee.pack();
+jLabell.addMouseListener(this);
+
 		//  You will need a different sound to go with this image.
 		//  Remember to add this MouseListener to it. Run the program.
 
@@ -65,6 +77,8 @@ jFrame.pack();
 
 	public void mouseClicked(MouseEvent e) {
 		// Print "mouse clicked" to the console. Run your program and watch
+		System.out.println("mouse clicked");
+	
 		// the console to see when this is printed.
 
 		JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
@@ -77,6 +91,12 @@ jFrame.pack();
 		// Ask your teacher for The League's login information.
 
 		//  If the user clicks on the drumImage...use the playSound method to play the drum sound.
+		if(labelClicked == drumLabel) {
+		System.out.print("ba-dum-bum");
+		}
+		else if(labelClicked == jLabell) {
+			System.out.print("chhhh");
+		}
 		//  Test to see if it works before moving on.
 
 	}
