@@ -51,27 +51,50 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-		// 2. Set the size of the window in the initializeGui() method 
+		// 2. Set the size of the window in the initializeGui() method
 
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
-		int score = Integer.parseInt(guess);
+		String guess1 = JOptionPane.showInputDialog("who is this?");
+		int score = 0;
 
 		// 5. Check their answer. If they guessed correctly:
-		if(guess.equalsIgnoreCase("arnold")) {
+
+		if (guess1.equalsIgnoreCase("arnold")) {
 			JOptionPane.showMessageDialog(null, "You guessed correctly");
-			score =+ 1;
-		}else {
+			score += 1;
+		} else {
 			JOptionPane.showMessageDialog(null, "You are wrong, this is arnold");
 		}
-		
+
 		// -- Tell them they are right and increase the score by 1
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-		
+
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
-
+		String guess2 = JOptionPane.showInputDialog("who is this?");
+		if (guess2.equalsIgnoreCase("leonardo")) {
+			JOptionPane.showMessageDialog(null, "You guessed correctly");
+			score += 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "You are wrong, this is leonardo");
+		}
+		showNextImage();
+		String guess3 = JOptionPane.showInputDialog("who is this?");
+		if (guess3.equalsIgnoreCase("morgan")) {
+			JOptionPane.showMessageDialog(null, "You guessed correctly");
+			score += 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "You are wrong, this is morgan");
+		}
+		showNextImage();
+		String guess4 = JOptionPane.showInputDialog("who is this?");
+		if (guess4.equalsIgnoreCase("jack")) {
+			JOptionPane.showMessageDialog(null, "You guessed correctly");
+			score += 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "You are wrong, this is jack");
+		}
 		// 8. .... repeat 4-7 for all your images.....
 
 		// 9. Show them their current score
